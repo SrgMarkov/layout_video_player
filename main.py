@@ -1,6 +1,6 @@
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from dotenv import load_dotenv
-from livereload import Server, shell
+from livereload import Server
 
 
 def main():
@@ -17,10 +17,9 @@ def main():
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
 
-    server = Server()
-    server.watch('template.html', shell('make html'))
-    server.serve(root='.')
-
 
 if __name__ == '__main__':
     main()
+    server = Server()
+    server.watch('template.html', main)
+    server.serve(port=8082, host='localhost')
