@@ -1,8 +1,7 @@
 **/__pycache__
 .venv/
 .vscode/
-.replit
 .DS_Store
-index.html
-.env
-template copy.html
+
+
+
