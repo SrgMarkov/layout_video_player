@@ -1,0 +1,7 @@
+**/__pycache__
+.env
+.vscode/
+.replit
+.DS_Store
+index.html
+.env
