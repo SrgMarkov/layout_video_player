@@ -19,4 +19,4 @@ if __name__ == '__main__':
     main()
     server = Server()
     server.watch('template.html', main)
-    server.serve(port=8082, host='localhost')
+    server.serve(port=8085, host='localhost')

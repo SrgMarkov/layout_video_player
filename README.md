@@ -14,6 +14,6 @@ pip install requirements.txt
 python3 main.py
 ```
 При запуске запустится локальный сервер и создастся файл  `index.html`
-Открыть плеер в браузере можно [по ссылке](http://localhost:8082/)
+Открыть плеер в браузере можно [по ссылке](http://localhost:8085/)
 
 Так же пример можно посмотреть на [GitHub Pages](https://srgmarkov.github.io/video_player/)
