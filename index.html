@@ -5,19 +5,19 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style type="text/css">
-      .vp-play-button, .vp-pause-button, .vp-mute-button, .vp-volume-button, .vp-fullscreen-button{
+      .vp-button{
         border-style: none;
         color: white;
-        width:5%;
-        height: auto;
+        width: 35px;
+        height: 35px;
         cursor: pointer;
         background-color: transparent;
         font-size: x-large;
-        margin: 0px 5px 10px 5px;
       }
       .vp-buttons{
         background-color: black;
         display: flex;
+        padding: 5px;
       }
       .vp-video-container{
         display: flex;
@@ -42,12 +42,12 @@
     <div id="player" class="vp-player">
       <div class="js-video-container vp-video-container"></div>
       <div class="vp-buttons">
-        <button class="js-play-button vp-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="js-pause-button vp-pause-button"><i class="fa fa-pause" aria-hidden="true"></i></button>
-        <button class="js-mute-button vp-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-        <button class="js-volume-button vp-volume-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+        <button class="js-play-button vp-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="js-pause-button vp-button"><i class="fa fa-pause" aria-hidden="true"></i></button>
+        <button class="js-mute-button vp-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+        <button class="js-volume-button vp-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
           <div class="vp-free-space"></div>
-        <button class="js-fullscreen-button vp-fullscreen-button"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
+        <button class="js-fullscreen-button vp-button"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
       </div>
     </div>
   
