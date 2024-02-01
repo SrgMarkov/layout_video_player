@@ -20,7 +20,7 @@
       .vp-bottom-controls{
         background-color: black;
         display: flex;
-        padding: 4px;
+        padding: 5px;
       }
       .vp-button{
         border-style: none;
@@ -35,16 +35,40 @@
         display: flex;
         flex-direction: row;
         align-self: stretch;
-        flex-grow: 5
+        flex-grow: 5;
+        padding-top: 8px;
+        padding-bottom: 8px;
       }
       .vp-time{
         color: white;
         font-family: 'Roboto', sans-serif;
-        padding-top: 8px;
       }
-      .vp-free-space{
+      .vp-progress-bar{
         align-self: stretch;
-        flex-grow: 5
+        flex-grow: 5;
+        background-color: black;
+        margin-left: 9px;
+        margin-right: 9px;
+        display: flex;
+      }
+      .vp-progress-bar-line{
+        background-color: #f8104d;
+        height: 5px;
+        border-radius: 3px; 
+        margin-top: 7px;
+      }
+      .vp-dot {
+        height: 8.5px;
+        width: 8.5px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        display: flex;
+        border-style: solid;
+        border-width: 2.5px;
+        border-color: white;
+        box-shadow: -2px 0px 5px black;
+        margin-top: 3px;
+        margin-left: -6;
       }
 
     </style>
@@ -54,14 +78,17 @@
       <div class="js-video-container vp-video-container"></div>
       <div class="vp-bottom-controls">
         <div class="vp-buttons">
-          <button class="js-play-button vp-button" style="padding-right: 20px;"><i class="fa fa-play" aria-hidden="true"></i></button>
-          <button class="js-pause-button vp-button" style="padding-right: 20px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
-          <button class="js-mute-button vp-button" style="padding-right: 5px; padding-left: 0px;"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-          <button class="js-volume-button vp-button" style="padding-right: 5px; padding-left: 0px;"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+          <button class="js-play-button vp-button" style="padding-right: 21px;"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="js-pause-button vp-button" style="padding-right: 21px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
+          <button class="js-mute-button vp-button" style="padding-right: 6px; padding-left: 0px;"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+          <button class="js-volume-button vp-button" style="padding-right: 6px; padding-left: 0px;"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
         </div>
         <div class="vp-viewing-panel">
           <div class="js-current-time vp-time"></div>
-          <div class="vp-free-space"></div>
+          <div class="js-progress vp-progress-bar">
+            <div class="js-progress-slider vp-progress-bar-line"></div>
+            <span class="vp-dot"></span>
+          </div>
           <div class="js-duration vp-time"></div>
         </div>
         <div class="vp-buttons">
@@ -69,7 +96,7 @@
         </div>
       </div>
     </div>
-  
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
     <script src="player.js"></script>
