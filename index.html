@@ -5,6 +5,23 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style type="text/css">
+      .vp-player{
+        box-shadow: 0 0 20px rgba(0,0,0,50);
+        width: 800px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+      }
+      .vp-video-container{
+        display: flex;
+        align-self: stretch;
+        flex-grow: 1
+      }
+      .vp-bottom-controls{
+        background-color: black;
+        display: flex;
+        padding: 4px;
+      }
       .vp-button{
         border-style: none;
         color: white;
@@ -14,40 +31,42 @@
         background-color: transparent;
         font-size: larger;
       }
-      .vp-buttons{
-        background-color: black;
+      .vp-viewing-panel{
         display: flex;
-        padding: 5px;
-      }
-      .vp-video-container{
-        display: flex;
-        align-self: stretch;
-        flex-grow: 1
-      }
-      .vp-player{
-        box-shadow: 0 0 20px rgba(0,0,0,50);
-        width: 800px;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-      }
-      .vp-free-space{
-        display: flex;
+        flex-direction: row;
         align-self: stretch;
         flex-grow: 5
       }
+      .vp-time{
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        padding-top: 8px;
+      }
+      .vp-free-space{
+        align-self: stretch;
+        flex-grow: 5
+      }
+
     </style>
   </head>
   <body>
     <div id="player" class="vp-player">
       <div class="js-video-container vp-video-container"></div>
-      <div class="vp-buttons">
-        <button class="js-play-button vp-button" style="padding-right: 20px;"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="js-pause-button vp-button" style="padding-right: 20px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
-        <button class="js-mute-button vp-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-        <button class="js-volume-button vp-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+      <div class="vp-bottom-controls">
+        <div class="vp-buttons">
+          <button class="js-play-button vp-button" style="padding-right: 20px;"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="js-pause-button vp-button" style="padding-right: 20px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
+          <button class="js-mute-button vp-button" style="padding-right: 5px; padding-left: 0px;"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+          <button class="js-volume-button vp-button" style="padding-right: 5px; padding-left: 0px;"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+        </div>
+        <div class="vp-viewing-panel">
+          <div class="js-current-time vp-time"></div>
           <div class="vp-free-space"></div>
-        <button class="js-fullscreen-button vp-button" style="padding-left: 11px;"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
+          <div class="js-duration vp-time"></div>
+        </div>
+        <div class="vp-buttons">
+          <button class="js-fullscreen-button vp-button" style="padding-left: 11px;"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
+        </div>
       </div>
     </div>
   
