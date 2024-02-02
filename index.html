@@ -2,9 +2,11 @@
   <head>
     <meta charset="utf-8">
     <title>Video Player</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style type="text/css">
+      
       .vp-player{
         box-shadow: 0 0 20px rgba(0,0,0,50);
         width: 800px;
@@ -23,6 +25,15 @@
         padding: 5px;
       }
       .vp-button{
+        border-style: none;
+        color: white;
+        width: 33px;
+        height: 35px;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: larger;
+      }
+      .vp-button:focus{
         border-style: none;
         color: white;
         width: 33px;
@@ -69,8 +80,29 @@
         box-shadow: -2px 0px 5px black;
         margin-top: 3px;
         margin-left: -6;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 300ms;
+        transition-timing-function: ease-out;
       }
+      .vp-progress-bar:hover .vp-dot {
+        height: 8.5px;
+        width: 8.5px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        display: flex;
+        border-style: solid;
+        border-width: 2.5px;
+        border-color: white;
+        box-shadow: -2px 0px 5px black;
+        margin-top: 3px;
+        margin-left: -6;
+        opacity: 1;
+        transition-property: all;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in;
 
+      }
     </style>
   </head>
   <body>

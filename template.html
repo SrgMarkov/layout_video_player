@@ -2,28 +2,11 @@
   <head>
     <meta charset="utf-8">
     <title>Video Player</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <style type="text/css">
-      .vp-button{
-        border-style: none;
-        color: white;
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        background-color: transparent;
-        font-size: x-large;
-      }
-      .vp-buttons{
-        background-color: black;
-        display: flex;
-        padding: 5px;
-      }
-      .vp-video-container{
-        display: flex;
-        align-self: stretch;
-        flex-grow: 1
-      }
+      
       .vp-player{
         box-shadow: 0 0 20px rgba(0,0,0,50);
         width: 800px;
@@ -31,26 +14,121 @@
         display: flex;
         flex-direction: column;
       }
-      .vp-free-space{
+      .vp-video-container{
         display: flex;
         align-self: stretch;
-        flex-grow: 5
+        flex-grow: 1
+      }
+      .vp-bottom-controls{
+        background-color: black;
+        display: flex;
+        padding: 5px;
+      }
+      .vp-button{
+        border-style: none;
+        color: white;
+        width: 33px;
+        height: 35px;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: larger;
+      }
+      .vp-button:focus{
+        border-style: none;
+        color: white;
+        width: 33px;
+        height: 35px;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: larger;
+      }
+      .vp-viewing-panel{
+        display: flex;
+        flex-direction: row;
+        align-self: stretch;
+        flex-grow: 5;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+      .vp-time{
+        color: white;
+        font-family: 'Roboto', sans-serif;
+      }
+      .vp-progress-bar{
+        align-self: stretch;
+        flex-grow: 5;
+        background-color: black;
+        margin-left: 9px;
+        margin-right: 9px;
+        display: flex;
+      }
+      .vp-progress-bar-line{
+        background-color: #f8104d;
+        height: 5px;
+        border-radius: 3px; 
+        margin-top: 7px;
+      }
+      .vp-dot {
+        height: 8.5px;
+        width: 8.5px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        display: flex;
+        border-style: solid;
+        border-width: 2.5px;
+        border-color: white;
+        box-shadow: -2px 0px 5px black;
+        margin-top: 3px;
+        margin-left: -6;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 300ms;
+        transition-timing-function: ease-out;
+      }
+      .vp-progress-bar:hover .vp-dot {
+        height: 8.5px;
+        width: 8.5px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        display: flex;
+        border-style: solid;
+        border-width: 2.5px;
+        border-color: white;
+        box-shadow: -2px 0px 5px black;
+        margin-top: 3px;
+        margin-left: -6;
+        opacity: 1;
+        transition-property: all;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in;
+
       }
     </style>
   </head>
   <body>
     <div id="player" class="vp-player">
       <div class="js-video-container vp-video-container"></div>
-      <div class="vp-buttons">
-        <button class="js-play-button vp-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="js-pause-button vp-button"><i class="fa fa-pause" aria-hidden="true"></i></button>
-        <button class="js-mute-button vp-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-        <button class="js-volume-button vp-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
-          <div class="vp-free-space"></div>
-        <button class="js-fullscreen-button vp-button"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
+      <div class="vp-bottom-controls">
+        <div class="vp-buttons">
+          <button class="js-play-button vp-button" style="padding-right: 21px;"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="js-pause-button vp-button" style="padding-right: 21px;"><i class="fa fa-pause" aria-hidden="true"></i></button>
+          <button class="js-mute-button vp-button" style="padding-right: 6px; padding-left: 0px;"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+          <button class="js-volume-button vp-button" style="padding-right: 6px; padding-left: 0px;"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+        </div>
+        <div class="vp-viewing-panel">
+          <div class="js-current-time vp-time"></div>
+          <div class="js-progress vp-progress-bar">
+            <div class="js-progress-slider vp-progress-bar-line"></div>
+            <span class="vp-dot"></span>
+          </div>
+          <div class="js-duration vp-time"></div>
+        </div>
+        <div class="vp-buttons">
+          <button class="js-fullscreen-button vp-button" style="padding-left: 11px;"><i class="fa fa-arrows-alt" aria-hidden="true"></i></i></button>
+        </div>
       </div>
     </div>
-  
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
     <script src="player.js"></script>
