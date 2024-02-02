@@ -16,6 +16,7 @@
     background-color: black;
     display: flex;
     padding: 5px;
+    cursor: pointer;
   }
   .vp-button{
     border-style: none;
@@ -78,7 +79,7 @@
     transition-duration: 300ms;
     transition-timing-function: ease-out;
   }
-  .vp-bottom-controls:hover .vp-dot {
+  .vp-progress-bar:hover .vp-dot {
     height: 8.5px;
     width: 8.5px;
     background-color: #f8104d;
